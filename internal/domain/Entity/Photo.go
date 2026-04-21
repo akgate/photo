@@ -1,6 +1,8 @@
-package domain
+package Entity
 
-import "github.com/google/uuid"
+import (
+	"github.com/google/uuid"
+)
 
 type LocationId uuid.UUID
 
@@ -10,9 +12,9 @@ type Photo struct {
 	coordinates Coordinates
 }
 
-func NewPhotoEntity(locationId LocationId, coordinates Coordinates, id *uuid.UUID) Photo {
-	return Photo{
-		id:          *id,
+func NewPhoto(locationId LocationId, coordinates Coordinates, id uuid.UUID) *Photo {
+	return &Photo{
+		id:          id,
 		locationId:  locationId,
 		coordinates: coordinates,
 	}

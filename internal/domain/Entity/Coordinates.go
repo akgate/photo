@@ -1,4 +1,4 @@
-package domain
+package Entity
 
 import "fmt"
 
@@ -17,10 +17,10 @@ func NewCoordinates(lat float64, lng float64) (Coordinates, error) {
 	return Coordinates{lat: lat, lng: lng}, nil
 }
 
-func (c *Coordinates) Lat() float64 {
+func (c Coordinates) Lat() float64 {
 	return c.lat
 }
 
-func (c *Coordinates) Lng() float64 {
+func (c Coordinates) Lng() float64 {
 	return c.lng
 }
